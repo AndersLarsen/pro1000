@@ -1,0 +1,2090 @@
+/*
+* LICENSE: This source file is subject to version 3.01 of the PHP license
+* that is available through the world-wide-web at the following URL:
+* http://www.php.net/license/3_01.txt.  If you did not receive a copy of
+* the PHP License and are unable top:  obtain it through the web, please
+* send a note to license@php.net so we can beskrivelse you a copy immediately.
+*
+* @author		Original Author <andersborglarsen@gbeskrivelse.com>
+* @author		Original Author <haavard@ringshaug.net>
+* @author		Original Author <gjermundwedvik@gmail.com>
+* @copyright 	2013-2018
+* @license		http://www.php.net/license/3_01.txt
+* @link		http://student.hive.no/pro10005/1
+*/
+/****************************/
+/*  TIKA :                  */
+/*  #27A5DC	light-blue      */
+/*  #FFFFFF white-space:    */
+/*  #DEDFE0 light-grey      */
+/*  #484848 dark-grey       */
+/*  #1387D0 dark-blue       */
+/****************************/
+
+/************************************ group resets and elements *********************************/
+/*i denne gruppen ligger generelle bestemelser i forhold til styling og fonts*/
+
+* { margin: 0; padding: 0; }
+
+html { 
+	height: 101%;
+}
+
+body { 
+	font-size: 62.5%; 
+	font-family: Helvetica, Arial, sans-serif; 
+	line-height: 10%; 
+	background: #27A5DC; 
+}
+section{
+	height: auto;
+}
+
+img { border: 0;}
+
+a { 
+	text-decoration: none; 
+}
+a:hover { 
+	text-decoration: underline; 
+}
+p { 
+	font-size: 1.2em; 
+	line-height: 1.4em; 
+	font-family: Arial, sans-serif; 
+	color: #333;  
+}
+
+h1 { 
+	font-family: Helvetica, Arial, Verdana, sans-serif; 
+	color: #444; 
+	font-weight: bold; 
+	font-size: 1.7em; 
+	line-height: 2.0em; 
+}
+
+h2 { 
+	font-family: Helvetica, Arial, Verdana, sans-serif; 
+	color: #444; 
+	font-weight: bold; 
+	font-size: 1.7em; 
+	line-height: 2.0em; 
+}
+h3 { 
+	font-weight: normal; 
+	font-size: 1.3em; 
+	line-height: 1.6em;  
+}
+h4 { 
+	color: #232323; 
+	font-family: Arial, Tahoma, sans-serif; 
+	font-size: 1.1em; 
+	line-height: 1.3em; 
+	margin-bottom: 10px; }
+
+/************************************* header and group core ************************************/
+/*her ligger styling til header og vertikale bestemmelser i forhold til oppsettet til siden*/
+/*wrapper legger betingelser om hvor bredt innholdet skal være*/
+.wrapper {
+	width: 950px; 
+	overflow: hidden; 
+	margin: 0 auto; 
+	background: none; 
+}
+/*Ble opprinnelig satt med egne definisjoner, men har blitt endret i ettertid*/
+.wrapper2 {
+	width: 950px; 
+	overflow: hidden; 
+	margin: 0 auto; 
+	background: none; 
+}
+/*Gir bla bestemmelser på logoens størrelse*/
+.iGeirLogo {
+	margin-left: 10px;
+	max-height: 100px;
+}
+header {
+	height: 100px; 
+	background-image: url("http://is.hive.no/pro10005/1/applikasjon/img/striper1.png");
+}
+/*representerer de øverste knappene som, min profil, logg inn, du er logget in som... osv*/
+header #usernav {
+	float: right; 
+	line-height: 65px; 
+	font-size: 14px; 
+	font-weight: bold; 
+	color: #484848; 
+}
+/*klasse som gir en farge til linkene i den samme linjen som er beskrevet over*/
+.headerButtons { 
+	text-decoration: none;
+	color:#484848;
+}
+/*samme som ovenfor*/
+.headerButtons:hover{
+	text-decoration: none;
+	color:#1387D0;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-webkit-transition: 0.3s;
+}
+/*klasse som gir en blå knapp i den samme linjen som er beskrevet over*/
+.regHeaderButton{
+	text-decoration: none;
+	background: #27A5DC;
+	padding:5px;
+	margin-right: 7px;
+	color:#fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-webkit-transition: 0.3s;
+}
+/*samme som ovenfor*/
+.regHeaderButton:hover{
+	text-decoration: none;
+	background: #1387D0;
+	color: #fff;
+}
+/*sokeboksen i headeren*/
+.searchbox {
+	border:0px; /*important*/
+	background-color:transparent; /*important*/
+	position:absolute; /*important*/
+	top:55px;
+	left:35%;
+	margin-left: 400px;
+	text-align: center;
+	width:170px;
+	height:20px;
+}
+/*inputtfeltet til sokemenyen i headeren*/
+.searchbox_input{
+	width: 160px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+/*submit knappen til sokeboksen i headeren*/
+.searchbox_submit {
+	font-weight: bold;
+	color: #fff;
+	border:0px;
+	background:#27A5DC ;
+	position:absolute; /*important*/
+	top:0px;
+	left:183px;
+	width:70px;
+	height:36px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+/*effekt til submitknappen til sokeboksen i headeren*/
+.searchbox_submit:hover{
+	background: #1387D0;
+}
+/*alt med content gir bestemmelser for hvordan siden 
+skal ligge, hvor brei og hvor lang den skal vaere*/
+/*contentstartPage gir kun bestemmelser for startsiden*/
+#contentStartPage{
+	position: relative;		
+	display: block; 
+	width: 1090px; 
+	margin: 0 auto; 
+	padding: 8px;
+}
+/*content gir bestemmelser for "store" og "market"
+ - mao Torget, Hobby og de andre produktsidene*/
+#content { 	
+	position: relative;		
+	display: block; 
+	width: 900px; 
+	margin: 0 auto; 
+	padding: 8px;
+}
+#content2 { 			
+	display: block; 
+	width: 950px; 
+	margin: 0 auto; 
+	padding: 8px;
+	hight:800px;
+}
+/*content3 gir bla bestemmelser for siste nytt om iGeir*/
+#content3 { 			
+	display: block; 
+	width: 800px; 
+	margin: 0 auto; 
+	padding: 8px;
+}
+#content4 { 		
+	display: block; 
+	width: 950px; 
+	margin: 0 auto; 
+	padding: 8px;
+}
+/*Gir bestemmelser for de boksene som ligger
+på venstre side av siden, gjeder ikke alle sider*/
+#left { 
+	display: block; 
+	width: 560px; 
+	float: left; 
+	overflow: hidden;
+	margin-right: 0px;
+}
+/*Gir bestemmelser for bokkser og innhold som 
+ligger på høyre side*/
+#right { 
+	display: block; 
+	width: 350px;
+	height: auto;
+	float: left; 
+	overflow: con hidden; 
+}
+/*samme funksjon som ovenfor, bare spesielt definert for brukersiden*/
+#userLeft { 
+	display: block; 
+	width: 420px; 
+	float: left; 
+	overflow: hidden;
+	margin-right: 0px;
+}
+/*Gir bestemmelser for produktvisningssiden*/
+#productpage{
+	display: block;
+	position: relative; 
+	width: 950px;
+	height: auto;
+	float: left; 
+	overflow: hidden;
+	margin-right: 0px;
+}
+/*samme som right ovenfor, bare med spesifikke definesjoner*/
+#aRight { 
+	display: block; 
+	width: 530px;
+	height: auto;
+	float: left; 
+	overflow: con hidden; 
+}
+#righto { 
+	display: block; 
+	width: 560px; 
+	float: right; 0
+	overflow: con hidden; 
+}
+
+/************************************** @group buttons & forms ***********************************/
+/*her er det meste av knapper og styling til forms*/
+
+input, textarea { 
+	padding: 9px;
+	border: solid 1px #E5E5E5;
+	outline: 0;
+	font: normal 13px/100% Verdana, Tahoma, sans-serif;
+	width: 220px;
+	background: #FFFFFF url('bg_form.png') left top repeat-x;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	margin-bottom: 5px;
+	}
+	input:hover, textarea:hover,
+	input:focus, textarea:focus { 
+	border-color: #27A5DC; 
+	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	}
+.logRegButton input{
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	color: #484848;
+	font-weight: bold;
+	width: 165px;
+	border:0;
+	margin: 5px;
+	font-size: 15px;
+	-webkit-box-shadow: 2px 2px 7px rgba(50, 50, 50, 0.82);
+	-moz-box-shadow:    2px 2px 7px rgba(50, 50, 50, 0.82);
+	box-shadow:         2px 2px 7px rgba(50, 50, 50, 0.82);
+}
+.logRegButton input:hover{
+	background: #1387D0;
+	color: #f9f9f9;
+	width: 165px;
+	border:0;
+	font-size: 15px;
+	-webkit-box-shadow: 0px 0px 8px rgba(50, 50, 50, 0.97);
+	-moz-box-shadow:    0px 0px 8px rgba(50, 50, 50, 0.97);
+	box-shadow:         0px 0px 8px rgba(50, 50, 50, 0.97);
+}
+.submitbuttons{
+	float: left;
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	color: #484848;
+	font-weight: bold;
+	width: 240px;
+	border:0;
+	margin: 5px;
+	margin-left:0;
+	margin-right:0;
+	font-size: 15px;
+	-webkit-box-shadow: 2px 2px 7px rgba(50, 50, 50, 0.82);
+	-moz-box-shadow:    2px 2px 7px rgba(50, 50, 50, 0.82);
+	box-shadow:         2px 2px 7px rgba(50, 50, 50, 0.82);
+}
+.submitbuttons:hover{
+	background: #1387D0;
+	color: #f9f9f9;
+	width: 240px;
+	border:0;
+	font-size: 15px;
+	-webkit-box-shadow: 0px 0px 8px rgba(50, 50, 50, 0.97);
+	-moz-box-shadow:    0px 0px 8px rgba(50, 50, 50, 0.97);
+	box-shadow:         0px 0px 8px rgba(50, 50, 50, 0.97);
+}
+.change_link{
+	color: #fff;
+	margin-top: 10px;
+}
+.change_link a{
+	background: #1387D0;
+	padding:5px;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #fff;
+}
+.menuLeftFolder .button1 {
+	font-size: 12px;
+	padding: 10px 10px;
+	margin-bottom:0px;
+	display: block;
+	background: #fff;
+	max-width:100%;
+	border: none;
+	color: #484848;
+	cursor: pointer;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-webkit-transition: 0.3s;
+}
+.button1:hover{
+	background: #1387D0;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	border-left: solid #fff 2px;
+	border-right: solid #fff 2px;
+}
+
+#buttonNext, #buttonBack {
+	position: fixed;
+	display: block;
+	height: auto;
+	width: auto;
+	background: #1387D0;
+	top:320px;
+	font-weight: bold;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 16px;
+	text-decoration: none;
+		-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+#buttonNext:hover, #buttonBack:hover,
+#buttonNext p:hover, #buttonBack p:hover{
+	background: #f9f9f9;
+	color: #1387D0;
+}
+
+#buttonNext p, #buttonBack p{
+	color: #fff;
+	padding:10px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+			-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+#buttonNext{
+	right:120px;
+}
+#buttonBack{
+	left:109px;
+}
+.edit_input{
+	display: block;
+	margin-top: 10px;
+}
+#ur_user_id{
+	line-height: 0,5em;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+/*sokeboksen i resultatboksen*/
+.searchbox2 {
+	float: center;
+	position:relative;
+	text-align: center;
+	width:170px;
+	height:20px;
+	margin-bottom: 20px;
+}
+/*inputtfeltet til sokemenyen i resultatboksen*/
+.searchbox_input2{
+	width: 180px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+/*submit knappen til sokeboksen i resultatboksen*/
+.searchbox_submit2 {
+	font-weight: bold;
+	color: #fff;
+	border:0px;
+	background:#27A5DC ;
+	position:absolute; /*important*/
+	top:0px;
+	left:140px;
+	width:70px;
+	height:36px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+/*effekt til submitknappen til sokeboksen i resultatboksen*/
+.searchbox_submit2:hover{
+	background: #1387D0;
+}
+
+/******************************************** @group nav ****************************************/
+/* dette er styling til menyen i headeren*/
+nav {
+	width: auto; 
+	background: #484848; 
+	height: 45px; 
+	-webkit-box-shadow: 0px 20px 30px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 20px 30px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 20px 30px rgba(50, 50, 50, 0.3);
+}
+ul#n {
+	width: 850px; 
+	margin: 0 auto; 
+	display: block; 
+	list-style: none; 
+}
+ul#n li { 
+	float: left; 
+	line-height: 45px; 
+	border: 3px solid #484848; 
+	border-top: 0px; 
+	border-bottom: 0px; 
+}
+ul#n li a { 
+	display: block; 
+	padding: 0 11px; 
+	color: #eee; 
+	font-size: 15px; 
+	font-weight: bold; 
+}
+
+ul#n li:hover {
+	background: #484848; 
+	border: 3px solid #27A5DC; 
+	border-top: 0px; 
+	border-bottom: 0px; 
+}
+ul#n li:hover a { 
+	color: #DEDFE0; 
+	text-decoration: none;
+}
+#setInButton a{
+	position: absolute;
+	right:200px, auto;
+	margin-left:700px;
+	float: left;
+	text-decoration: none; 
+	text-align: center;
+	display: block; 
+	min-width: 150px;
+	padding: 15px;
+	margin-top:7px; 
+	color: #fff;
+	background:#484848;  
+	font-size: 15px; 
+	font-weight: bold;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+		-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+#setInButton:hover a{
+	background: #27A5DC;
+	color: #f9f9f9;
+}
+
+/************************************* @group userstats left *****************************************/
+/*beskriver/presenterer brukerinformasjon og fungerer vanligvis som form til alt som ligger i samme section*/
+/*general*/
+#userStats { 
+	display: block; 
+	width: auto; 
+	background-color: #f9f9f9; 
+	border-radius: 3px; 
+	padding: 10px; 
+	height: auto;
+	margin-right: 7px;
+	margin-bottom: 7px;
+}
+/*header*/
+#userStats .head { 
+	background: #f9f9f9; 
+	height: 40px;
+}
+/*header font*/
+#userStats .head h2 {
+	padding: 2px;
+	padding-left: 7px;
+	padding-bottom: 0px;
+	margin-bottom: 20px;
+	background: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+/*profile pictureframe*/
+#userStats .pic {
+	position: relative; 
+	background: #fff;
+	float: left; 
+	display: block; 
+	padding: 10px;
+	margin-right: 5px;
+	height: 160px;
+	width: 160px; 
+	min-height: 160px;
+	min-width: 160px;
+	max-height: 160px;
+	min-width: 160px;
+	-moz-border-radius-topleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	border-top-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+/*the profile picture*/
+#userStats .pic a img {
+	padding: 7px; /*making the frame*/
+	background: #fff;
+	height: auto;
+	width: auto;
+	max-height: 140px;
+	max-width: 140px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 2px 4px 11px rgba(50, 50, 50, 0.27);
+	-moz-box-shadow:    2px 4px 11px rgba(50, 50, 50, 0.27);
+	box-shadow:         2px 4px 11px rgba(50, 50, 50, 0.27);
+}
+/*make the picture stand in center both vertical and horisontal*/
+#userStats .pic a img.center {
+  display: block; 
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/*user-profile-info's, like tlf mob and so on...*/
+#userStats .data {
+	position: relative;
+	float: left;
+	display: block;
+	width: 207px; 
+	height: 180px;
+	padding: 4px; 
+	padding-top: 5.5px;  
+	background: #fff; 
+	overflow:  hidden; 
+	box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	-moz-border-radius-topright: 3px;
+	-webkit-border-top-right-radius: 3px;
+	border-top-right-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+/*profile-info's first line of info, then the 3'rd, then the 5'th and so on*/
+.infoLine1{
+	display: block;
+	height: auto;
+	width: auto;
+	float: left;
+	background: #f9f9f9;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+/*profiles-ingo's second line of info, then the 4'rth, then the 6'th and so on*/
+.infoLine2{
+	display: block;
+	height: auto;
+	width: auto;
+	float: left;
+	background: #fff;
+}
+/*a block that holds the description of the data to the left and in line*/
+.infoLeft{
+	display: block;
+	float: left;
+	max-width: 70px;
+	width: 70px;
+	float: left;
+}
+/*a block that holds the user info to the right and in line*/
+.infoRight{
+	display: block;
+  float: right;
+	max-width: 126px;
+	width: 126px;
+	float: left;
+}
+/*styler kun mailfeltet*/
+.mailLeft{
+	max-width: 35px;
+	width: 35px;
+}
+.mailRight{
+	max-width: 161px;
+	width: 161px;
+}
+/*styles the userprofiles text*/
+#userStats .data p {
+	font-size: 1.2em; 
+	line-height-top: 0.2em; 
+	font-family: Arial, sans-serif; 
+	color: #484848;
+	padding: 0.36em;
+}
+/*makes the user info float right*/
+.infoRight p {
+	text-align: right;
+}
+/*2'nd box in the section, styles the the box where u can sett in a new product*/
+#userstats form{
+	margin:0;
+	padding: 0;
+	position: relative;
+}
+select{
+	height: 25px;
+	float:left;
+	margin:3px;
+	margin-right: 0;
+	margin-left: 0;
+	width: 192px;
+}
+#type{
+	margin-right: 6px;
+}
+/*2'nd box header style*/
+#userStats #header {
+	display: block;
+	float: left;
+	border: solid 1px #1387D0;
+	width: 372px;
+	margin:0;
+	margin-bottom: 3px;
+}
+/*new ad-input and form style*/
+#userStats #pris{
+	display: block;
+	float: left;
+	border: solid 1px #1387D0;
+	width: 173px;
+	margin: 3px;
+	margin-left: 0;
+}
+/*new ad-input and form style*/
+#userStats .upLoadPic{
+	display: block;
+	float: left;
+	border: solid 1px #1387D0;
+	background: #DEDFE0;
+	width: 372px;
+	height: 33px;
+	margin: 3px;
+	margin-left: 0;
+	cursor:pointer;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+/*inputt and from text style*/
+.upLoadPic p {
+	text-align: center;
+	font-family: Arial, sans-serif; 
+	font-size: 15px;
+	margin-top: 5px;
+	color: #484848;
+}
+/*new ad-input and form style*/
+#userstats input, textarea{
+	display: block;
+	float: left;
+	border: solid 1px #1387D0;
+	max-width: 372px;
+	min-width: 372px;
+	height: 110px;
+	margin: 3px;
+	margin-left: 0;
+}
+/*new ad-input and form style*/
+#radioButtons{
+	display: block;
+	float: left;
+	height: auto;
+	width: 380px;
+	margin: 3px;
+	margin-left: 0;
+	padding: 5px;
+	border: solid 1px #1387D0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #DEDFE0;
+	font-size: 12px;
+}
+/*new ad-input and form style*/
+#radioButtons input{
+	width: 16px;
+	height: 16px;
+}
+/*new ad-input and form style*/
+.radioLine{
+	padding: 5px;
+	width: 160px;
+	height: 20px;
+	float: left;
+}
+/*new ad-input and form style*/
+.radioLab{
+	float: left;
+	margin-left: 35px;
+	margin-right: 20px;
+	height: 20px;
+	width: 30px;
+}
+/*new ad-input and form style*/
+.radioInp{
+	float left: 
+}
+/*submitt and te button that uploads the new add*/
+.upload{
+	width: 393px;
+	height: 40px;
+	color: #fff;
+	margin-top: 3px;
+	margin-left 0;
+	margin-bottom: 0;
+	font-size: 16px;
+	background: rgb(39,165,220); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(39,165,220,1) 2%, rgba(19,135,208,1) 90%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(39,165,220,1)), color-stop(90%,rgba(19,135,208,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(39,165,220,1) 2%,rgba(19,135,208,1) 90%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(39,165,220,1) 2%,rgba(19,135,208,1) 90%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(39,165,220,1) 2%,rgba(19,135,208,1) 90%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(39,165,220,1) 2%,rgba(19,135,208,1) 90%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#27a5dc', endColorstr='#1387d0',GradientType=0 ); /* IE6-9 */
+}
+/*new ad-input and form style*/
+#upload:hover{
+	background: #27A5DC;
+}
+/*new ad-input and form style*/
+#editUserInfo { 
+	display: block; 
+	width: auto; 
+	background-color: #f9f9f9; 
+	border-radius: 3px; 
+	padding: 7px; 
+	height: auto;
+	margin-right: 7px;
+	margin-bottom: 7px;
+}
+#editUserInfo2{ 
+	display: block; 
+	width: auto; 
+	background-color: #f9f9f9; 
+	border-radius: 3px; 
+	padding: 7px; 
+	height: auto;
+	margin-right: 7px;
+	margin-bottom: 0px;
+}
+#editUserInfo2 th{
+	color: #484848;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: normal;
+	margin-top: 5px;
+}
+#editUserInfo2 td{
+	line-height: 1.5em;
+	width: 150px;
+}
+#content3 #editUserInfo2 h2{
+	color: #484848;
+	font-size: 20px;
+	font-weight: bold;
+}
+#editUserInfo2 input{
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	color: #484848;
+	font-weight: bold;
+	float: left;
+	width: 70px;
+	border:0;
+	margin:0;
+	font-size: 15px;
+	-webkit-box-shadow: 2px 2px 7px rgba(50, 50, 50, 0.82);
+	-moz-box-shadow:    2px 2px 7px rgba(50, 50, 50, 0.82);
+	box-shadow:         2px 2px 7px rgba(50, 50, 50, 0.82);
+}
+#editUserInfo2 input:hover{
+	background: #1387D0;
+	color: #f9f9f9;
+	width: 70px;
+	border:0;
+	font-size: 15px;
+	-webkit-box-shadow: 0px 0px 8px rgba(50, 50, 50, 0.97);
+	-moz-box-shadow:    0px 0px 8px rgba(50, 50, 50, 0.97);
+	box-shadow:         0px 0px 8px rgba(50, 50, 50, 0.97);
+}
+/*new ad-input and form style: difines the length of a group of inputs*/
+.shortLine {
+	width: 176px;
+	border: solid 1px #1387D0;
+	margin: 3px;
+	margin-left: 0;
+	margin-right: 0;
+}
+.shortLine #pris{
+	margin-right: 6px;
+}
+/*new ad-input and form style: difines the length of a group of inputs*/
+.longLine {
+	width: 372px;
+	border: solid 1px #1387D0;
+	margin: 3px;
+}
+
+/************** @group register, login update-product, edit-myprofile, edit-password *************/
+
+/*general for edit-myprofile, editpassword and update-product*/
+#userEditForms {
+	display: block; 
+	width: 393px; 
+	background-color: #f9f9f9; 
+	border-radius: 3px; 
+	padding: 10px; 
+	height: auto;
+	margin-right: 7px;
+	margin-bottom: 7px;
+}
+/*Font styles*/
+#fontstyle h2{
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 10px;
+}
+#fontstyle h3{
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+.textLogAndReg{
+	padding: 60px;
+	padding-right: 50px;
+	width: 400px;
+	height: 500px;
+	color: #fff;
+	border-right: 2px dotted #1387D0;
+}
+.textLogAndReg p, h1 {
+	color: #fff;
+}
+.textLogAndReg p {
+	font-size: 14px;
+}
+
+#loginForm{
+	padding:60px;
+	padding-left: 0;
+}
+#loginForm #password, #username{
+	width: 220px;
+	border: 1px solid #1387D0;
+}
+#registerForm{
+	padding:60px;
+	padding-left: 0;
+	padding-bottom: 0;
+}
+
+/****************************************** @group yourAdvertisings *****************************************/
+
+#aRight .yourAdvertisings { 
+	display: block;  
+	height: auto;
+	width: auto;
+	text-decoration: none;
+}
+/*Styler diven rundt overskriften i "dine annonser"*/
+#aRight .yourAdvertisings .head { 
+	background: #f9f9f9; 
+	height: 40px;
+	-moz-border-radius-topleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	 border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-webkit-border-top-right-radius: 3px;
+	border-top-right-radius: 3px;
+	text-decoration: none;
+}
+/*Styler overskrift til "dine annonser"*/
+#aRight .yourAdvertisings .head h3 { 
+	color: #484848; 
+	font-weight: bold; 
+	font-size: 1.6em; 
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	text-decoration: none;
+	-webkit-box-shadow: 0px 6px 5px rgba(50, 50, 50, 0.26);
+	-moz-box-shadow:    0px 6px 5px rgba(50, 50, 50, 0.26);
+	box-shadow:         0px 6px 5px rgba(50, 50, 50, 0.26);
+}
+/*styler bakgrunnen og diven rundt innholdet i "dine annonser"*/
+#aRight .yourAdvertisings .boxy { 
+	border-radius: 0px 0px 3px 3px; 
+	border-top: 0px; 
+	padding: 10px 8px; 
+	background: #fff; 
+	margin-bottom: 7px;
+	height: auto;
+	padding-left: 22px;
+	text-decoration: none;
+}
+/*styler boksen/diven rundt bilde til "dine annonser"*/
+.advertisingPic {
+	position: relative;
+	margin-top:-75px;
+	float: right; 
+	margin-right: -8px;
+	display: block; 
+	padding: 5px;
+	height: 214px;
+	width: 250px; 
+	min-height: 215px;
+	min-width: 250px;
+	-moz-border-radius-bottomright: 3px;
+-webkit-border-bottom-right-radius: 3px;
+border-bottom-right-radius: 3px;
+}
+/*styling of picture sourundings and max size*/
+.advertisingPic a img {
+	padding: 7px;
+	background: #fff;
+	height: auto;
+	width: auto;
+		border:solid 1px #ccc;
+	max-height: 175px;
+	max-width: 190px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 2px 4px 3px rgba(50, 50, 50, 0.27);
+	-moz-box-shadow:    2px 4px 3px rgba(50, 50, 50, 0.27);
+	box-shadow:         2px 4px 3px rgba(50, 50, 50, 0.27);
+}
+.advertisingPic a img.center { /*make the picture stand in center both vertical and horisontal*/
+  display: block; 
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#aRight .yourAdvertisings input{ /*styler interessert knappen*/
+	width: 220px;
+	color: #fff;
+	height: 30px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, rgba(39,165,220,1) 2%, rgba(19,135,208,1) 90%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(39,165,220,1)), color-stop(90%,rgba(19,135,208,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(39,165,220,1) 2%,rgba(19,135,208,1) 90%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(39,165,220,1) 2%,rgba(19,135,208,1) 90%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(39,165,220,1) 2%,rgba(19,135,208,1) 90%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(39,165,220,1) 2%,rgba(19,135,208,1) 90%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#27a5dc', endColorstr='#1387d0',GradientType=0 ); /* IE6-9 */
+}
+#aRight .yourAdvertisings input:hover{
+	background: #27A5DC;
+}
+
+/************************************ @group productPage *****************************************/
+/*general - div rundt produktpresentasjon*/
+#productPresentation { 
+	display: block; 
+	width: auto; 
+	background: #fff; 
+	border-radius: 3px; 
+	padding: 4px; 
+	min-height: 546px;
+	height: auto;
+	float: left;
+}
+/*general - div rundt "andre lignende annonser"*/
+#otherSimular{
+	display: block; 
+	width: auto;
+	margin-top: 8px; 
+	background: #fff; 
+	border-radius: 3px; 
+	padding: 4px; 
+	height: auto;
+	float: left;
+}
+/*product header*/
+#productPresentation #prodHeader{
+	display: block;
+	height: 40px;
+	width: 600px;
+	background: #eee;
+	padding: 10px;
+	margin: 4px;
+	float: left;
+}
+#prodStatus{
+	position: relative;
+	display: block;
+	height: 40px;
+	width: 286px;
+	background: #eee;
+	padding: 10px;
+	margin: 4px;
+	float: left;
+}
+#prodStatus p{
+line-height: 0.1em
+}
+#prodStatus h3{
+	color: red;
+	font-size: 30px;
+	font-weight: bold;
+}
+#interessert{
+	background: #27A5DC;
+	font-size: 15px;
+	color: #fff;
+	height: 40px;
+	display: block;
+	position: absolute;
+	width: 130px;
+	top:10px;
+	right: 10px;
+	border-radius: 3;
+}
+/*by user-div*/
+#productPresentation #byUser{
+	display: block;
+	position: relative;
+	height: 95px;
+	width: 934px;
+	background: #fff;/*#1387D0*/
+	margin: 4px;
+	float: left;
+}
+#byUserWho, #byUserRange, #byUserOtherProducts{
+	display: block;
+	height: 15px;
+	width: 296px;
+	background: #1387D0;
+	padding: 5px;
+	padding-top: 2px;
+	padding-bottom: 8px;
+	margin-left: 8px;
+	float: left;	
+}
+#byUserWho{
+	margin-left: 0;
+}
+#byUserName, #byUserRangeR, #byUserOtherProductsCont{
+	display: block;
+	height: 60px;
+	width: 296px;
+	background: #27A5DC;
+	padding: 5px;
+	margin-left: 8px;
+	float: left;	
+}
+#byUserName{
+	margin-left: 0;
+}
+/*Styling profile picture at productpage*/
+.profilePicProd {
+	position: relative;
+	margin-top:-10px;
+	float: left; 
+	display: block; 
+	padding: 5px;
+	height: 65px;
+	width: 65px;
+	min-height: 65px;
+	min-width: 65px;
+	max-height: 65px;
+	min-width: 65px;
+}
+.profilePicProd a img { /*styling of picture sourundings and max size*/
+	height: auto;
+	padding: 4px;
+	background: #fff;
+	width: auto;
+	max-height: 50px;
+	max-width: 50px;
+}
+.profilePicProd a img.center { /*make the picture stand in center both vertical and horisontal*/
+  display: block; 
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/*other products by same profile*/
+#byUserOtherProductsCont #goto{
+	position: relative;
+	color:#fff;
+	margin-top: -1px;
+	margin-left: 8px;
+	float: left; 
+	display: block; 
+	padding: 5px;
+	height: 50px;
+	width: 50px; 
+	min-height: 50px;
+	min-width: 50px;
+	max-height: 50px;
+	min-width: 50px;
+}
+#byUserOtherProductsCont #goto:hover{
+	background: #DEDFE0;
+	border: solid 1px #fff;
+}
+.otherProducts .links{ /*styling of picture sourundings and max size*/
+	height: auto;
+	width: auto;
+	max-height: 45px;
+	max-width: 45px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	  display: block; 
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/*Fonts productPage*/
+#productPresentation #prodHeader h2{
+	font-size: 30px;
+	margin-top: -10px;
+}
+#byUserName h3{
+	position: absolute;
+	left:76px;
+	margin-top: -4px;
+	font-size: 20px;
+	color: #484848;
+	float: left;
+}
+#description h4{
+	font-size: 20px;
+	font-weight: normal;
+}
+.profileText{
+	margin-left: 2px;
+	margin-top: 2px;
+	color:#fff;
+}
+.byUserText{
+	position: absolute;
+	left: 15px;
+	color: #484848;
+	bottom: 25px;
+	font-size: 16px;
+}
+.byUserNr{
+	position: absolute;
+	right: 15px;
+	bottom: -10px;
+	font-size: 40px;
+	color: #484848;
+	padding-bottom: 15px;
+}
+/*3 upper-div-boxses*/
+#productPresentation .upperblocks{
+	position: relative;
+	display: block;
+	height: 50px;
+	width: 286px;
+	background: #DEDFE0;
+	padding: 10px;
+	margin: 4px;
+	float: left;
+}
+/*description-div*/
+#productPresentation #description{
+	display: block;
+	min-height: 80px;
+	height: auto;
+	width: 914px;
+	background: #DEDFE0;
+	padding: 10px;
+	margin: 4px;
+	float: left;
+}
+/*map-div*/
+#productPresentation #map_folder{
+	display: block;
+	min-height: 266px;
+	height: auto;
+	width: 458px;
+	background: #DEDFE0;
+	padding: 10px;
+	margin: 4px;
+	float: left;
+}
+
+/*picture presentation background*/
+#slideshow{
+	display: block;
+	height: 286px;
+	width: 448px;	
+	background: #eee;
+	margin: 4px;
+	float: left;
+}
+#slideshow a {
+  color:blue;
+  text-decoration:none;
+}
+/* General */
+#css3-slider {
+  margin:0px auto;
+  padding:0px 0px;
+  width:448px;
+  height:286px;
+  position:relative;
+}
+#css3-slider li {
+  list-style:none;
+  margin:0px 0px;
+  padding:0px 0px;
+}
+/* Navigation */
+#css3-slider li input + label {
+  position:absolute;
+  bottom:5px;
+  left:10px;
+  z-index:999;
+  font:bold 11px/16px Arial,Sans-Serif;
+  background-color:black;
+  color:white;
+  padding:0px 0px;
+  width:16px;
+  text-align:center;
+  cursor:pointer;
+}
+#css3-slider li:nth-child(2) label {left:28px;}
+#css3-slider li:nth-child(3) label {left:46px;}
+#css3-slider li:nth-child(4) label {left:64px;}
+#css3-slider li:nth-child(5) label {left:82px;}
+/* Images */
+#css3-slider li img {
+  border:none;
+  outline:none;
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0px;
+  height:0px;
+  visibility:hidden;
+  opacity:0;
+  transform:all 2s ease-in-out;
+  -moz-transition:all 2s ease-left;
+  -ms-transition:all 2s ease-left;
+  -o-transition:all 2s ease-left;
+  transition:all 2s ease-left;
+  -webkit-transform:rotate(0deg) scale(0);
+  -moz-transform:rotate(0deg) scale(0);
+  -ms-transform:rotate(0deg) scale(0);
+  -o-transform:rotate(0deg) scale(0);
+  transform:rotate(0deg) scale(0);
+}
+/* Captions */
+#css3-slider a {
+display: block;
+text-align: center;
+text-decoration: none !important;
+}
+#css3-slider li a span {
+  cursor:default;
+  display:block;
+  position:absolute;
+  right:0px;
+  bottom:0px;
+  left:0px;
+  background-color:rgba(0,0,0,0.5);
+  font:normal 11px/26px Arial,Sans-Serif;
+  color:white;
+  padding:0px 10px;
+  text-align:right;
+  opacity:0;
+  viibility:hidden;
+}
+/* Active navigation */
+#css3-slider li input:checked + label {
+  background-color:#39f;
+  color:white;
+}
+/* Show the image with transition */
+#css3-slider li input:checked ~ img,
+#css3-slider li input:checked ~ a img {
+top: 0%;
+float: none;
+position: static;
+left: 0%;
+margin: 0 auto;
+width: auto;
+max-width: 448px;
+height: 286px;
+visibility: visible;
+-webkit-transform: rotate(0deg) scale(1);
+-moz-transform: rotate(0deg) scale(1);
+-ms-transform: rotate(0deg) scale(1);
+-o-transform: rotate(0deg) scale(1);
+transform: rotate(0deg) scale(1);
+opacity: 1;
+z-index: 99;
+}
+/* Show the caption with fade effect */
+#css3-slider li input:checked ~ a span {
+  opacity:1;
+  z-index:100;
+}
+/* Hide the radio */
+#css3-slider input {
+  display:none;
+}
+.otherSimularProducts{
+	display: block;
+	margin-top: 10px;
+	height: auto;
+	width: 950px;
+	float: left;
+	background: #eee;
+	padding-top: 10px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+/*Disse definisjonene gjør at productbox blir tilpasse productpage.php's bredde*/
+.otherSimularProducts #productBox{
+	width: 226px;
+}
+.otherSimularProducts #productBox form{
+	width: 225px;
+}
+.otherSimularProducts #productBox input{
+	max-width: 190px;
+	max-height: 160px;
+}
+/************************************** @group startpage *****************************************/
+
+/*Bakgrunn til knappene i starmenyen og bestemmelser for div'en rundt*/
+#torgetStartpage { 
+	display: block; 
+	width: auto; 
+	background-color: #fff; 
+	border-radius: 3px; 
+	height: auto;
+	margin-right: 8px;
+	padding:5px;
+	padding-bottom: 0;
+	float: left;
+}
+/*bestemmelser til overskrift*/
+#torgetStartpage .head { 
+	background: #f9f9f9; 
+	border-bottom: 2px dotted #484848; 
+	padding-left: 8px; 
+	margin-bottom: 8px;
+	height: 50px;
+	-moz-border-radius-topleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	 border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-webkit-border-top-right-radius: 3px;
+	border-top-right-radius: 3px
+}
+/*Font storrelse og type til overskrift*/
+#torgetStartpage .head h1 { 
+	color: #484848; 
+	font-weight: bold; 
+	font-size: 1.4em; 
+	padding-top: 10px;
+	padding-left: 10px;
+}
+/*forste vertikale linje med knapper i hovedmenyen*/
+.startButtonBox1 {
+	display: block;
+	height: auto;
+	width: 220px;
+	float: left;
+	padding: 4px;
+}
+/*andre vertikale linje med knapper i hovedmenyen*/
+.startButtonBox2 {
+	display: block;
+	height: auto;
+	width: 220px;
+	float: left;
+	padding: 4px;
+}
+/*tredje vertikale linje med kanpper i hovedmenyen*/
+.startButtonBox3 {
+	display: block;
+	height: auto;
+	width: 220px;
+	float: left;
+	padding: 4px;
+}
+/*styling av knapper i startButtonBox 1, 2 og 3*/
+/*.button2 {
+	display: block;
+	text-align: center;
+	font-size: 15px;
+	color: #484848;
+	padding-top: 23px;
+	margin-bottom:8px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+/*	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+/*	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+/*	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+/*	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+/*	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+/*	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+/*	width:100%;
+/*	height: 30px;
+/*	-webkit-box-shadow: 1px 2px 6px rgba(50, 50, 50, 0.75);
+/*	-moz-box-shadow:    1px 2px 6px rgba(50, 50, 50, 0.75);
+/*	box-shadow:         1px 2px 6px rgba(50, 50, 50, 0.75);
+}
+
+.button2:hover{
+	font-weight: bold;
+	background: #27A5DC;
+	color: #fff;
+	text-decoration: none;
+}*/
+#contentStartPage .button3 p{
+font-size: 20px;
+color: #484848;
+text-align: center;
+margin-top: 18px;
+margin-bottom: 0;
+margin-left: 0;
+margin-right: 0;
+}
+.button3 {
+	display: block;
+	padding-top: 20px;
+	margin: 4px;
+	margin-bottom: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	width:auto;
+	height: 90px;
+	-webkit-box-shadow: 1px 2px 6px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 2px 6px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 2px 6px rgba(50, 50, 50, 0.75);
+}
+#contentStartPage .button3 p:hover,.button3:hover{
+	font-weight: bold;
+	background: #DEDFE0;
+	text-decoration: none;
+}
+/*nyheter som dukker opp i hovedmenyen*/
+#right .newsFeed { 
+	display: block;  
+}
+/*Bestemmelser for div'en rundt overskriften i newsfeed*/
+#right .newsFeed .head { 
+	background: #f9f9f9; 
+	border: 1px solid #ccc;
+	border-bottom: 2px dotted #484848; 
+	padding-left: 8px; 
+	height: 50px;
+	-moz-border-radius-topleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	 border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-webkit-border-top-right-radius: 3px;
+	border-top-right-radius: 3px
+}
+/*Bestemmelser for font-styling til overskriften i newsfeed*/
+#right .newsFeed .head h1 { 
+	color: #484848; 
+	font-weight: bold; 
+	font-size: 1.4em; 
+	padding-top: 10px;
+	padding-left: 10px;
+}
+/*bakgrunn fieldset og div'en rundt*/
+#right .newsFeed .boxy { 
+	border-radius: 0px 0px 3px 3px; 
+	border: 1px solid #ccc; 
+	border-top: 0px; 
+	padding: 8px 8px; 
+	background: #eee; 
+	margin-bottom: 5px;
+}
+/*Det stylede textfeltet i newsfeed*/
+fieldset {
+	border:solid #fff 6px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	position:relative;
+	text-align:left;
+	left: 6%;
+	max-width:88%;
+	height:auto;
+	border: none;
+	background:#fff; 
+	-webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.68);
+	-moz-box-shadow:    0px 4px 5px rgba(50, 50, 50, 0.68);
+	box-shadow:         0px 4px 5px rgba(50, 50, 50, 0.68);
+}
+legend {
+	background: #fff;
+	border: solid 6px #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 6px;
+	margin-bottom: 15px;
+	font-size: 16px;
+}
+/*Font bestemmelser i newsfeed*/
+fieldset p {
+	color:#484848;
+	text-align:left;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+/*styler*/
+i {
+	color:#1387D0;
+	text-align:left;
+	margin-top: 15px;
+	padding: 10px; 
+	font-size: 11px;
+}
+
+/***************************************** @group market *****************************************/
+
+#store {
+	display: block; 
+	width: 900px; 
+	float: left; 
+	overflow: hidden;
+	margin-right: 0px;
+	border-radius: 5px;
+	padding-bottom: 10px;
+}
+
+#storeSetup { 
+	display: block; 
+	width: auto;  
+	border-radius: 5px;  
+	height: auto;
+}
+#storeSetup .userFolder {
+	float: left; 
+	display: block; 
+	position: relative; 
+	width: 230px; 
+	height: auto; 
+	padding-top: 10px;
+	background: #f9f9f9;
+	border-radius: 3px 3px 3px 3px;
+	overflow:  hidden; 
+	box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+}
+#storeSetup .menuLeftFolder {
+	float: left; 
+	display: block; 
+	position: relative; 
+	width: 230px; 
+	height: auto; 
+	padding-bottom: 30px;
+	background: #eee;
+	border-radius: 3px 3px 3px 3px;
+	border-top: 1px solid #fff;
+	overflow:  hidden; 
+}
+#storeSetup .menuLeftFolder h2{
+	color: #484848; 
+	line-height: 1.6em;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+#storeSetup .productfolder{ 
+	float: left; 
+	display: block; 
+	position: relative;
+	margin-left: 8px; 
+	max-width: 660px; 
+	height: auto; 
+	padding-top: 10px;
+	padding-right: 10px;
+	background: #eee; 
+	border-radius: 3px 3px 3px 3px;
+	border: 1px solid #f9f9f9;
+	border-top: 1px solid #fff;
+	overflow:  hidden; 
+	box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+}
+
+#storeSetup .productfolder02{ 
+	float: left; 
+	display: block; 
+	position: relative;
+	margin-left: 8px; 
+	max-width: 660px;
+	width:660px;
+	min-height:441px; 
+	height: auto; 
+	padding-top: 10px;
+	padding-right: 10px;
+	background: #eee; 
+	border-radius: 3px 3px 3px 3px;
+	border: 1px solid #ccc;
+	border-right: 0;
+	overflow:  hidden; 
+	box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+}
+#reklame {
+	position: relative;
+	width: 1220px;
+	height: 200px;
+}
+#advertisingTop{
+	display: block;
+	float: left;
+	background: #dddddd;
+ 	height: 200px;
+ 	width: 900px;
+ 	margin-bottom: 8px; 
+}
+#advertisingRightSide{
+	position: absolute;
+	right: 50px;
+ 	display: block;
+ 	float:left;
+	background: #dddddd;
+ 	height: 900px;
+ 	width: 200px; 
+}
+
+/*************************************** @group productBox **************************************/
+
+#productBox {
+	display: block;
+	width: 207px;
+	float: left;
+	overflow: hidden;
+	margin-left: 9px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	-webkit-box-shadow: 3px 3px 8px rgba(51, 56, 56, 0.48);
+	-moz-box-shadow: 3px 3px 8px rgba(51, 56, 56, 0.48);
+	box-shadow: 3px 3px 8px rgba(51, 56, 56, 0.48);
+	background: #f9f9f9;
+}
+#productBox .pcontent { 
+	display: block;
+}
+#productBox .pcontent .productHead { 
+	display: block;
+	background: #fff; 
+	border-bottom: 1px solid #ccc; 
+	padding-top: 4px;
+	height: 40px;
+	width: auto; 
+	margin-bottom: 31px;
+	text-align: center;
+}
+.productHead h5 { 
+	color: #484848; 
+	line-height: 1.2em;
+	font-size: 16px;
+}
+
+#productBox .pcontent .productbox { 
+	border-radius: 0px 0px 3px 3px; 
+	border: 1px solid #ccc; 
+	border-top: 0;
+	background: #fff; 
+}
+#productBox form{
+  position: relative;
+  margin-top:-28px;
+  float: left; 
+  display: block; 
+  height: 206px;
+  width: 206px;
+  min-height: 206px;
+  min-width: 206px;
+  max-height: 206px;
+  background: #fff;
+}
+#productBox input{
+	padding: 10px;
+  height: auto;
+  padding: 4px;
+  background: #fff;
+  width: auto;
+  max-height: 160px;
+  max-width: 180px;
+  display: block; 
+  position: absolute;
+  margin: auto;
+  top: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#productBox .badgeCount { 
+	margin-bottom: 0;  
+	line-height: 8px;
+	display: block;
+	height: 20px;
+	text-align:center;
+
+}
+/***************************************** @group about us **************************************/
+
+#aboutfolder { 
+	display: block; 
+	height: auto 0;
+	width: 900px; 
+	float: left; 
+	overflow: hidden;
+	margin-right: 0px;
+	padding: 4px;
+	border: solid 0px;
+	border-radius: 5px 
+}
+#aboutUs { 
+	display: block; 
+	width: auto; 
+	height: auto;
+	background-color: #f9f9f9; 
+	border: 1px solid #f9f9f9; 
+	border-radius: 3px; 
+	padding: 8px; 
+	margin:4px;
+	float: left;
+-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 1);
+-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 1);
+box-shadow:         1px 1px 5px rgba(50, 50, 50, 1);
+}
+#aboutUs .pic { 
+	float: left; 
+	display: block; 
+	margin-right: 10px; 
+}
+#aboutUs .pic a img { 
+	padding: 7px; 
+	background: #fff; 
+	-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 1);
+-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 1);
+box-shadow:         1px 1px 5px rgba(50, 50, 50, 1);
+	}
+#aboutUs .aboutUsData { 
+	float: left; 
+	display: block; 
+	position:  relative; 
+	width: 250px; 
+	height: 150px; 
+	padding-bottom: 8px; 
+	padding-left: 8px; 
+	background: #f9f9f9; 
+	overflow:  hidden; 
+	box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+}
+#aboutUs .aboutUsData h2 { 
+	color: #484848; 
+	line-height: 1.6em; 
+}
+#aboutUs .aboutUsData p { 
+	color: #484848; 
+	line-height: 0.9em; 
+	margin-bottom: 5px; 
+}
+#aboutUs .aboutUsData ul.numbers {
+	list-style: none; 
+	width: 320px; 
+	padding-top: 7px; 
+	margin-top: 0; 
+	border-top: 1px 
+	solid #fff; 
+	color: #676767; 
+}
+
+/**************************************** @group support *****************************************/
+#supportLeft { 
+	display: block; 
+	width: 650px; 
+	float: left; 
+	overflow: hidden;
+	margin-right: 0px;
+}
+#supportRight { 
+	display: block; 
+	width: 300px;
+	height: auto;
+	float: left; 
+	overflow: con hidden;
+}
+
+#suportBox{
+	position: relative;
+	display: block;
+	background: #f9f9f9;
+	min-height: 580px;
+	hight:100%;
+	width: auto;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3x;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 0px 10px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 0px 10px rgba(50, 50, 50, 0.75);
+}
+#suportBox h2{
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 10px;
+	text-shadow: 2px 2px 4px rgba(150, 150, 150, 1);
+}
+#suportBox h3{
+	font-size: 20px;
+	font-weight: bold;
+	color: #484848;
+}
+.textSuport{
+	padding: 30px;
+	padding-right: 50px;
+	width: 250px;
+	height: auto;
+	color: #484848;
+	float:left;
+}
+.faqBox{
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	right: 300px;
+	padding: 30px;
+	padding-right: 50px;
+	width: 250px;
+	height: auto;
+	color: #484848;
+	background: #fff;
+	float:left;
+	border-right:solid 1px #B2B2B2; 
+	border-left:solid 1px #DEDFE0;
+}
+.faqBox h4{
+	color: #1387D0;
+	font-size: 12px;
+}
+.textSuport p, h1 {
+	color: #484848;
+}
+#suportForm{
+	position: absolute;
+  right: 0px;
+  bottom: 0;
+  top:0;
+  height: auto;
+  width: 240px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding:30px;
+	padding-left: 30px;
+	background: #DEDFE0;
+}
+#suportForm textarea{
+	max-width: 220px;
+	min-width: 220px;
+	height: 150px;
+	border:solid 1px #DEDFE0;
+}
+#suportForm textarea:hover{
+	max-width: 220px;
+	min-width: 220px;
+	height: 150px;
+	border:solid 1px #27A5DC;
+}
+#suportPicture{
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+/****************************************** @group footer ***************************************/
+
+footer{
+	z-index
+	width: 100%;
+	background: -moz-linear-gradient(top, rgba(19,135,208,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(19,135,208,1)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(19,135,208,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(19,135,208,1) 0%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(19,135,208,1) 0%,rgba(125,185,232,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(19,135,208,1) 0%,rgba(125,185,232,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1387d0', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+	height:200px;
+	text-align: center;
+	bottom: 0;
+	right:0; 
+	left:0;
+}
+#footermeny{
+	padding:20px;
+}
+.footermeny{
+ font-size: 16px;
+ text-decoration: none;
+ color: #fff;
+}
+.footermeny:hover{
+ font-size: 16px;
+ text-decoration: none;
+ color: #ccc;
+}
+footer .spanfooter { 
+	color: #fff;
+	padding-right:5px; 
+	padding-left:5px;
+	font-size: 20px;
+
+}
+
+/***************************************** group clearfix ***************************************/
+
+/*The clearfix hack also known as the
+Easy Clearing Hack is used to clear 
+floated divisions (divs) without using 
+structural markup.*/
+.clearfix:after { 
+	content: "."; 
+	display: block; 
+	clear: both; 
+	visibility: hidden; 
+	line-height: 0; 
+	height: 0; 
+}
+.clearfix { 
+	display: inline-block; 
+}
+ 
+html[xmlns] .clearfix { 
+	display: block; 
+}
+* html .clearfix { 
+	height: 1%; 
+}
+
+.nobrdr { 
+	border: 0px !important; 
+}
